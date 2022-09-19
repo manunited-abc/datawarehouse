@@ -16,7 +16,7 @@ public class ScheduledTask {
     @Autowired
     DataService dataService;
     private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledTask.class);
-    @Scheduled(cron = "00 35 22 * * ?")
+    @Scheduled(cron = "00 42 17 * * ?")
     public void scheduleTaskWithCronExpression(){
         LocalDateTime date = LocalDateTime.now();
         dataService.writeToCSV(date);

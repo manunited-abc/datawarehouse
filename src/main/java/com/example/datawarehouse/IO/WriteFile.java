@@ -22,7 +22,6 @@ public class WriteFile {
         }
     }
     public static void write(String nameFile, List<Lottery> lotteries){
-        init(path);
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fullPath+nameFile)))) {
             bw.write("Company");
             bw.write(",");

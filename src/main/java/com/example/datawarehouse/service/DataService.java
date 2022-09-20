@@ -26,7 +26,7 @@ public class DataService {
             int day = issueDate.getDayOfMonth();
             if (issueDate.isBefore(LocalDateTime.of(year, month, day, 17, 10, 00, 00))) {
                 System.out.println("chua so");
-                issueDate.minusDays(1);
+                issueDate = issueDate.minusDays(1);
             }
             String dateString = convertDateToString(issueDate);
             System.out.println(dateString);

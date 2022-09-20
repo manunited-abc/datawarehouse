@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Component
 public class ScheduledTask {
@@ -18,7 +19,7 @@ public class ScheduledTask {
     private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledTask.class);
     @Scheduled(cron = "00 42 17 * * ?")
     public void scheduleTaskWithCronExpression(){
-        LocalDateTime date = LocalDateTime.now();
+        LocalDateTime date = LocalDateTime.now(ZoneId.of("Asia/Ho_Chi_Minh"));
         dataService.writeToCSV(date);
         LOGGER.info("Write file success");
     }

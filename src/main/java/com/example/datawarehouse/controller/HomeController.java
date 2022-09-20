@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public class HomeController {
     @GetMapping(value={"home","/","index"})
     public String home(Model model){
-        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Ho_Chi_Minh"));
+        LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd,MM,yyyy HH:mm:ss");
         String time = now.format(formatter);
         model.addAttribute("currentDate",time);
